@@ -340,3 +340,4 @@ def loginWindow():
 
     loginButton=Button(window, text="Login",width=20, height=2, command=lambda:adminLogin())
     loginButton.grid(row=4, column=2, columnspan=2)
+def mainwindow():
