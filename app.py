@@ -234,3 +234,21 @@ def remove_all_widgets():
         widget.grid_remove()
 
 #=================update bill data===========
+def updateBillsData():
+    records = billsTV.get_children()
+
+    for element in records:
+        
+        billsTV.delete(element)
+
+        
+    conn = pymysql.connect(host="localhost", user="root", passwd="", db="billing system")
+    cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+    query = "select * from bill"
+    cursor.execute(query)
+    data = cursor.fetchall()
+    
+    for row in data:
+        billsTV.insert('', 'end',text=row['name'],values=(row["rate"],row["quantity"],row["cost"]))
+    conn.close()
