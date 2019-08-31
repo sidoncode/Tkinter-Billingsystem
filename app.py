@@ -176,3 +176,11 @@ def print_bill():
     totalCost=0.0
     updateListView()
     totalCostVar.set("Total Cost = {}".format(totalCost)) 
+#===============function to logOut===================
+def LogOut():
+    remove_all_widgets()
+    loginWindow()
+
+def moveToUpdate():
+    remove_all_widgets()
+    updateItemWindow()
