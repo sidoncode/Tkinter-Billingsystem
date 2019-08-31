@@ -360,3 +360,6 @@ def mainwindow():
 
     itemDropDown=OptionMenu(window,itemVariable,*options,command=optionMenuListener)
     itemDropDown.grid(row=2, column=1,padx=(10,0), pady=(10,0))
+
+    rateLabel= Label(window, text="Rate")
+    rateLabel.grid(row=2, column=2, padx=(10,0), pady=(10,0))
