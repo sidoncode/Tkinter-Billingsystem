@@ -58,3 +58,23 @@ rateVar = StringVar()
 rateVar.set("%.2f"%itemRate)
 costVar=StringVar()
 costVar.trace('w', costFieldListener)
+#========mainTreeView======================
+billsTV = ttk.Treeview(height=15, columns=('Rate','Quantity','Cost'))
+
+#==========update tree View
+updateTV = ttk.Treeview(height=15, columns=('Name','Rate','type','Store_Type'))
+
+#============= add item Variables==========
+storeOptions=['Frozen','Fresh']
+addItemNameVar=StringVar()
+addItemRateVar=StringVar()
+addItemTypeVar=StringVar()
+addstoredVar=StringVar()
+addstoredVar.set(storeOptions[0])
+
+itemLists= list()
+totalCost=0.0
+totalCostVar=StringVar()
+totalCostVar.set("Total Cost = {}".format(totalCost))
+
+updateItemId=""
