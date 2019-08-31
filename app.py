@@ -189,9 +189,10 @@ def moveToUpdate():
 def movetoBills():
     remove_all_widgets()
     viewAllBills()
-#=========funtion to read data from list of item
+#=========funtion to read data from list of item # click ubuntu function
 def readAllData():
     global options
+
     global rateDict
     global itemVariable
     global itemRate
