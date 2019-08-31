@@ -220,3 +220,10 @@ def readAllData():
     else:
         remove_all_widgets()
         mainwindow()
+def optionMenuListener(event):
+    global itemVariable
+    global rateDict
+    global itemRate
+    item = itemVariable.get()
+    itemRate= int(rateDict[item])
+    rateVar.set("%.2f"%itemRate)
