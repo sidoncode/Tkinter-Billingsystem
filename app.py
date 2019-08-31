@@ -369,3 +369,4 @@ def mainwindow():
 
 
     quantityLabel = Label(window, text="Quantity")
+    quantityLabel.grid(row=3, column=0,padx=(5,0),pady=(10,0))
