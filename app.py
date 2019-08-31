@@ -363,6 +363,9 @@ def mainwindow():
 
     rateLabel= Label(window, text="Rate")
     rateLabel.grid(row=2, column=2, padx=(10,0), pady=(10,0))
-    
+
     rateValue = Label(window, textvariable=rateVar)
     rateValue.grid(row=2, column=3, padx=(10,0), pady=(10,0))
+
+
+    quantityLabel = Label(window, text="Quantity")
