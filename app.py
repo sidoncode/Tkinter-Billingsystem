@@ -232,3 +232,5 @@ def remove_all_widgets():
     global window
     for widget in window.winfo_children():
         widget.grid_remove()
+
+#=================update bill data===========
