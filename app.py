@@ -372,3 +372,6 @@ def mainwindow():
     quantityLabel.grid(row=3, column=0,padx=(5,0),pady=(10,0))
     quantityEntry=Entry(window, textvariable=quantityVar)
     quantityEntry.grid(row=3, column=1,padx=(5,0),pady=(10,0))
+
+
+    costLabel= Label(window, text="Cost")
