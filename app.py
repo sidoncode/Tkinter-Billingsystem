@@ -351,3 +351,6 @@ def mainwindow():
 
     showallEntry= Button(window, text="Show Bills", width=15, height=2,command=lambda:movetoBills())
     showallEntry.grid(row=1, column=2, padx=(10,0), pady=(10,0))
+
+    logoutBtn = Button(window, text = "Logout",width=15, height=2,command=lambda:LogOut())
+    logoutBtn.grid(row=1, column=4,pady=(10,0))
