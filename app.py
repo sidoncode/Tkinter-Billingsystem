@@ -92,3 +92,15 @@ def generate_bill():
     cost = costVar.get()
     conn = pymysql.connect(host="localhost", user="root", passwd="", db="billing system")
     cursor = conn.cursor()
+    
+    query="insert into bill (name,quantity, rate, cost) values('{}','{}','{}','{}')".format(itemName,quantity,itemRate,cost)
+    cursor.execute(query)
+    conn.commit()
+    conn.close()
+    listDict = {"name":itemName, "rate":itemRate,"quantity":quantity, "cost":cost}
+    itemLists.append(listDict)
+    totalCost+=float(cost)
+    quantityVar.set("0")
+    costVar.set("0")
+    updateListView()
+    totalCostVar.set("Total Cost = {}".format(totalCost))
