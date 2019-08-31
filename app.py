@@ -252,9 +252,25 @@ def updateBillsData():
     for row in data:
         billsTV.insert('', 'end',text=row['name'],values=(row["rate"],row["quantity"],row["cost"]))
     conn.close()
+#============== admin login function=======
 def adminLogin():
     global usernameVar
     global passwordVar
 
     username = usernameVar.get()
     password = passwordVar.get()
+    conn = pymysql.connect(host="localhost", user="root", passwd="", db="billing system")
+    cursor = conn.cursor()
+
+    query = "select * from users where username='{}' and password='{}'".format(username, password)
+    cursor.execute(query)
+    data = cursor.fetchall()
+    admin = False
+    for row in data:
+        admin = True
+    conn.close()
+    if admin:
+        readAllData()
+    else:
+        messagebox.showerror("Invalid user", "Credentials enters are invalid")
+
