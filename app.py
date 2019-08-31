@@ -104,3 +104,17 @@ def generate_bill():
     costVar.set("0")
     updateListView()
     totalCostVar.set("Total Cost = {}".format(totalCost))
+def OnDoubleClick(event):
+    global addItemNameVar
+    global addItemRateVar
+    global addItemTypeVar
+    global addstoredVar
+    global updateItemId
+    item = updateTV.selection()
+    updateItemId= updateTV.item(item,"text")
+    item_detail= updateTV.item(item,"values")
+    item_index=storeOptions.index(item_detail[3])
+    addItemTypeVar.set(item_detail[2])
+    addItemRateVar.set(item_detail[1])
+    addItemNameVar.set(item_detail[0])
+    addstoredVar.set(storeOptions[item_index])
