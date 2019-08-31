@@ -120,7 +120,7 @@ def OnDoubleClick(event):
     addstoredVar.set(storeOptions[item_index])
 
 
-    
+
 def updateListView():
     records = billsTV.get_children()
 
@@ -129,3 +129,19 @@ def updateListView():
 
     for row in itemLists:
         billsTV.insert('', 'end',text=row['name'],values=(row["rate"],row["quantity"],row["cost"]))
+def getItemLists():
+    records=updateTV.get_children()
+
+    for element in records:
+        updateTV.delete(element)
+    
+    conn = pymysql.connect(host="localhost", user="root", passwd="", db="billing system")
+    cursor = conn.cursor(pymysql.cursors.DictCursor)
+    query="select * from itemlist"
+    cursor.execute(query)
+    data = cursor.fetchall()
+    for row in data:
+        updateTV.insert('','end',text=row['nameid'],values=(row['name'],row['rate'],row['type'],row['storetype']))
+    updateTV.bind("<Double-1>",OnDoubleClick)
+
+    conn.close()
