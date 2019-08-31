@@ -118,3 +118,14 @@ def OnDoubleClick(event):
     addItemRateVar.set(item_detail[1])
     addItemNameVar.set(item_detail[0])
     addstoredVar.set(storeOptions[item_index])
+
+
+    
+def updateListView():
+    records = billsTV.get_children()
+
+    for element in records:
+        billsTV.delete(element)
+
+    for row in itemLists:
+        billsTV.insert('', 'end',text=row['name'],values=(row["rate"],row["quantity"],row["cost"]))
