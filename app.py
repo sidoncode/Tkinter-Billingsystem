@@ -252,3 +252,9 @@ def updateBillsData():
     for row in data:
         billsTV.insert('', 'end',text=row['name'],values=(row["rate"],row["quantity"],row["cost"]))
     conn.close()
+def adminLogin():
+    global usernameVar
+    global passwordVar
+
+    username = usernameVar.get()
+    password = passwordVar.get()
