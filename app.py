@@ -296,3 +296,25 @@ def addItem():
     addItemNameVar.set("")
     addItemRateVar.set("")
     addItemTypeVar.set("")
+def updateItem():
+    global addItemNameVar
+    global addItemRateVar
+    global addItemTypeVar
+    global addstoredVar
+    global updateItemId
+
+    name = addItemNameVar.get()
+    rate = addItemRateVar.get()
+    Type = addItemTypeVar.get()
+    storeType= addstoredVar.get()
+    conn = pymysql.connect(host="localhost", user="root", passwd="", db="billing system")
+    cursor = conn.cursor()
+    query = "update  itemlist set name='{}',rate='{}',type='{}',storetype='{}' where nameid='{}'".format(name,rate,Type,storeType,updateItemId)
+    cursor.execute(query)
+    conn.commit()
+    conn.close()
+
+    addItemNameVar.set("")
+    addItemRateVar.set("")
+    addItemTypeVar.set("")
+    getItemLists()
