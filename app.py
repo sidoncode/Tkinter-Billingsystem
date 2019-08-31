@@ -341,3 +341,5 @@ def loginWindow():
     loginButton=Button(window, text="Login",width=20, height=2, command=lambda:adminLogin())
     loginButton.grid(row=4, column=2, columnspan=2)
 def mainwindow():
+    titleLabel = Label(window,text="P&E Billing System",font="Arial 30",fg="green")
+    titleLabel.grid(row=0,column=1,columnspan=3,pady=(10,0))
