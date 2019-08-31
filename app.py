@@ -145,3 +145,34 @@ def getItemLists():
     updateTV.bind("<Double-1>",OnDoubleClick)
 
     conn.close()
+
+def print_bill():
+    global itemLists
+    global totalCost
+
+    billString = ""
+    billString+="=====================Receipt==========================\n\n"
+    billString+="======================================================\n"
+    billString+="{:<20}{:<10}{:<15}{:<10}\ns".format("Name", "Rate", "Quantity", "Cost")
+    billString+="======================================================\n"
+     
+    for item in itemLists:
+        billString+="{:<20}{:<10}{:<15}{:<10}\n".format(item["name"],item["rate"],item["quantity"],item["cost"])
+
+    billString+="======================================================\n"
+    billString+="{:<20}{:<10}{:<15}{:<10}\n".format("Total Cost"," "," ",totalCost)
+
+    billFile = filedialog.asksaveasfile(mode='w',defaultextension=".txt")
+    if billFile is None:
+        messagebox.showerror("Invalid file Name", "Please enter valid name")
+    else:
+        billFile.write(billString)
+        billFile.close()
+        
+    print(billString)
+    
+
+    itemLists =[]
+    totalCost=0.0
+    updateListView()
+    totalCostVar.set("Total Cost = {}".format(totalCost)) 
