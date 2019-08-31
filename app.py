@@ -273,4 +273,6 @@ def adminLogin():
         readAllData()
     else:
         messagebox.showerror("Invalid user", "Credentials enters are invalid")
-
+def addItemListener():
+    remove_all_widgets()
+    itemAddWindow()
