@@ -276,3 +276,23 @@ def adminLogin():
 def addItemListener():
     remove_all_widgets()
     itemAddWindow()
+#below are the fx of the additem part 
+def addItem():
+    global addItemNameVar
+    global addItemRateVar
+    global addItemTypeVar
+    global addstoredVar
+    name = addItemNameVar.get()
+    rate = addItemRateVar.get()
+    Type = addItemTypeVar.get()
+    storeType= addstoredVar.get()
+    nameId=name.replace(" ","_")
+    conn = pymysql.connect(host="localhost", user="root", passwd="", db="billing system")
+    cursor = conn.cursor()
+    query = "insert into itemlist (name,nameid,rate,type,storetype) value('{}','{}','{}','{}','{}')".format(name, nameId, rate,Type,storeType)
+    cursor.execute(query)
+    conn.commit()
+    conn.close()
+    addItemNameVar.set("")
+    addItemRateVar.set("")
+    addItemTypeVar.set("")
