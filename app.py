@@ -190,3 +190,32 @@ def movetoBills():
     remove_all_widgets()
     viewAllBills()
 #=========funtion to read data from list of item
+def readAllData():
+    global options
+    global rateDict
+    global itemVariable
+    global itemRate
+    global rateVar
+    options=[]
+    rateDict={}
+    conn = pymysql.connect(host="localhost", user="root", passwd="", db="billing system")
+    cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+    query = "select * from itemlist"
+    cursor.execute(query)
+    data = cursor.fetchall()
+    count=0
+    for row in data:
+        count+=1
+        options.append(row['nameid'])
+        rateDict[row['nameid']]=row['rate']
+        itemVariable.set(options[0])
+        itemRate=int(rateDict[options[0]])
+    conn.close()
+    rateVar.set("%.2f"%itemRate)
+    if count ==0:
+        remove_all_widgets()
+        itemAddWindow()
+    else:
+        remove_all_widgets()
+        mainwindow()
