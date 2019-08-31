@@ -25,3 +25,20 @@ def quantityFieldListener(a,b,c):
     else:
         quantity=0
         quantityVar.set("%.2f"%quantity)
+def costFieldListener(a,b,c):
+    global quantityVar
+    global costVar
+    global itemRate
+    cost = costVar.get()
+    if cost !="":
+        try:
+            cost = float(cost)
+            quantity=cost/itemRate
+            quantityVar.set("%.2f"%quantity)
+            costVar.set("%.2f"%cost)
+        except ValueError:
+            cost=cost[:-1]
+            costVar.set(cost)
+    else:
+        cost=0
+        costVar.set(cost)
