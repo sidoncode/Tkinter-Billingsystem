@@ -227,3 +227,8 @@ def optionMenuListener(event):
     item = itemVariable.get()
     itemRate= int(rateDict[item])
     rateVar.set("%.2f"%itemRate)
+#==========function to remove all widget
+def remove_all_widgets():
+    global window
+    for widget in window.winfo_children():
+        widget.grid_remove()
