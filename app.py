@@ -78,3 +78,17 @@ totalCostVar=StringVar()
 totalCostVar.set("Total Cost = {}".format(totalCost))
 
 updateItemId=""
+#=============funtion to generate bill=====================
+def generate_bill():
+    global itemVariable
+    global quantityVar
+    global itemRate
+    global costVar
+    global itemLists
+    global totalCost
+    global totalCostVar
+    itemName = itemVariable.get()
+    quantity=quantityVar.get()
+    cost = costVar.get()
+    conn = pymysql.connect(host="localhost", user="root", passwd="", db="billing system")
+    cursor = conn.cursor()
