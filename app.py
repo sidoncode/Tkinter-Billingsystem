@@ -189,3 +189,4 @@ def moveToUpdate():
 def movetoBills():
     remove_all_widgets()
     viewAllBills()
+#=========funtion to read data from list of item
