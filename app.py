@@ -348,3 +348,6 @@ def mainwindow():
     addNewItem.grid(row=1, column=0, padx=(10,0),pady=(10,0))
     updateItem = Button(window, text="Update Item", width=15, height=2,command=lambda: moveToUpdate())
     updateItem.grid(row=1, column=1, padx=(10,0), pady=(10,0))
+
+    showallEntry= Button(window, text="Show Bills", width=15, height=2,command=lambda:movetoBills())
+    showallEntry.grid(row=1, column=2, padx=(10,0), pady=(10,0))
