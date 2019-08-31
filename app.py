@@ -375,3 +375,4 @@ def mainwindow():
 
 
     costLabel= Label(window, text="Cost")
+    costLabel.grid(row=3, column=2, padx=(10,0), pady=(10,0))
