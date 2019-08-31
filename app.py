@@ -354,3 +354,6 @@ def mainwindow():
 
     logoutBtn = Button(window, text = "Logout",width=15, height=2,command=lambda:LogOut())
     logoutBtn.grid(row=1, column=4,pady=(10,0))
+
+    itemLabel = Label(window, text="Select Item")
+    itemLabel.grid(row=2, column=0, padx=(5,0),pady=(10,0))
