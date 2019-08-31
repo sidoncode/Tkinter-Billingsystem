@@ -319,3 +319,24 @@ def updateItem():
     addItemRateVar.set("")
     addItemTypeVar.set("")
     getItemLists()
+def loginWindow():
+    titleLabel = Label(window,text="P&E Billing System",font="Arial 40",fg="green")
+    titleLabel.grid(row=0,column=0,columnspan=4, padx=(40,0),pady=(10,0))
+
+    loginLabel = Label(window,text="Admin Login",font="Arial 30")
+    loginLabel.grid(row=1, column=2,padx=(50,0),columnspan=2, pady=10)
+
+    usernameLabel = Label(window, text="Username")
+    usernameLabel.grid(row=2, column=2,padx=20,pady=5)
+
+    passwordLabel = Label(window, text="Password")
+    passwordLabel.grid(row=3, column=2,padx=20,pady=5)
+
+    usernameEntry= Entry(window, textvariable=usernameVar)
+    usernameEntry.grid(row=2, column=3,padx=20,pady=5)
+
+    passwordEntry = Entry (window, textvariable=passwordVar,show="*")
+    passwordEntry.grid(row=3,column=3,padx=20,pady=5)
+
+    loginButton=Button(window, text="Login",width=20, height=2, command=lambda:adminLogin())
+    loginButton.grid(row=4, column=2, columnspan=2)
