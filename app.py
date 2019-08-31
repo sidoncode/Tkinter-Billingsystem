@@ -343,3 +343,8 @@ def loginWindow():
 def mainwindow():
     titleLabel = Label(window,text="P&E Billing System",font="Arial 30",fg="green")
     titleLabel.grid(row=0,column=1,columnspan=3,pady=(10,0))
+
+    addNewItem = Button(window, text="Add Item", width=15, height=2, command=lambda: addItemListener())
+    addNewItem.grid(row=1, column=0, padx=(10,0),pady=(10,0))
+    updateItem = Button(window, text="Update Item", width=15, height=2,command=lambda: moveToUpdate())
+    updateItem.grid(row=1, column=1, padx=(10,0), pady=(10,0))
