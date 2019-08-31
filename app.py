@@ -296,6 +296,7 @@ def addItem():
     addItemNameVar.set("")
     addItemRateVar.set("")
     addItemTypeVar.set("")
+#below is the function of the update item in the list
 def updateItem():
     global addItemNameVar
     global addItemRateVar
