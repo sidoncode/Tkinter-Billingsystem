@@ -184,3 +184,8 @@ def LogOut():
 def moveToUpdate():
     remove_all_widgets()
     updateItemWindow()
+
+#===============function to move to veiw bills window========
+def movetoBills():
+    remove_all_widgets()
+    viewAllBills()
