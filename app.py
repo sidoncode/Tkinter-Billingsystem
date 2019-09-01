@@ -417,3 +417,6 @@ def itemAddWindow():
 
     itemNameEntry= Entry(window, textvariable=addItemNameVar)
     itemNameEntry.grid(row=1, column=2, pady=(10,0))
+
+    itemRateLabel= Label(window, text="Rate")
+    itemRateLabel.grid(row=1, column=3, pady=(10,0))
