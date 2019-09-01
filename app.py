@@ -401,3 +401,5 @@ def mainwindow():
     totalCostLabel.grid(row=6,column=1)
     generateBill = Button(window, text="Generate Bills",width=15, command = lambda:print_bill())
     generateBill.grid(row=6,column=4)
+    
+    updateListView() #// call the function of the update list view
