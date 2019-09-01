@@ -385,5 +385,9 @@ def mainwindow():
 
     billLabel=Label(window, text="Bills", font="Arial 25")
     billLabel.grid(row=4, column=2)
+    billsTV.grid(row=5, column=0, columnspan=5)
 
-    
+    scrollBar = Scrollbar(window, orient="vertical",command=billsTV.yview)
+    scrollBar.grid(row=5, column=4, sticky="NSE")
+
+    billsTV.configure(yscrollcommand=scrollBar.set)
