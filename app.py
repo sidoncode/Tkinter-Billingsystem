@@ -487,3 +487,26 @@ def updateItemWindow():
     updateTV.heading('#4',text="Store Type")
     updateTV.column('#4', minwidth=0, width=150)
     getItemLists()
+def viewAllBills():
+    backButton = Button(window, text="Back" , command=lambda:readAllData())
+    backButton.grid(row=0, column=1)
+    titleLabel = Label(window,text="P&E Billing System", width=40,font="Arial 30",fg="green")
+    titleLabel.grid(row=0,column=2,columnspan=4,pady=(10,0))
+    billsTV.grid(row=1, column=0, columnspan=5)
+
+    scrollBar = Scrollbar(window, orient="vertical",command=billsTV.yview)
+    scrollBar.grid(row=1, column=4, sticky="NSE")
+
+    billsTV.configure(yscrollcommand=scrollBar.set)
+
+    billsTV.heading('#0',text="Item Name")
+    billsTV.heading('#1',text="Rate")
+    billsTV.heading('#2',text="Quantity")
+    billsTV.heading('#3',text="Cost")
+
+    updateBillsData()
+
+
+loginWindow()
+window.mainloop()
+#--------------------closing if the main -->f(x)<---
