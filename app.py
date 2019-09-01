@@ -396,3 +396,8 @@ def mainwindow():
     billsTV.heading('#1',text="Rate")
     billsTV.heading('#2',text="Quantity")
     billsTV.heading('#3',text="Cost")
+
+    totalCostLabel = Label(window, textvariable=totalCostVar)
+    totalCostLabel.grid(row=6,column=1)
+    generateBill = Button(window, text="Generate Bills",width=15, command = lambda:print_bill())
+    generateBill.grid(row=6,column=4)
