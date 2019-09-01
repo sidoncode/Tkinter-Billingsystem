@@ -391,6 +391,6 @@ def mainwindow():
     scrollBar.grid(row=5, column=4, sticky="NSE")
 
     billsTV.configure(yscrollcommand=scrollBar.set)
-    
+
     billsTV.heading('#0',text="Item Name")
-    
+    billsTV.heading('#1',text="Rate")
