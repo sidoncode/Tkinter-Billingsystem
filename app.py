@@ -395,3 +395,4 @@ def mainwindow():
     billsTV.heading('#0',text="Item Name")
     billsTV.heading('#1',text="Rate")
     billsTV.heading('#2',text="Quantity")
+    billsTV.heading('#3',text="Cost")
