@@ -438,9 +438,52 @@ def itemAddWindow():
     AddItemButton = Button(window, text="Add Item", width=20, height=2, command=lambda:addItem())
     AddItemButton.grid(row=3, column=3,pady=(10,0))
 
-    
+
 def updateItemWindow():
     backButton = Button(window, text="Back" , command=lambda:readAllData())
     backButton.grid(row=0, column=1)
     titleLabel = Label(window,text="P&E Billing System", width=40,font="Arial 30",fg="green")
     titleLabel.grid(row=0,column=2,columnspan=4,pady=(10,0))
+    itemNameLabel= Label(window, text="Name")
+    itemNameLabel.grid(row=1, column=1, pady=(10,0))
+
+    itemNameEntry= Entry(window, textvariable=addItemNameVar)
+    itemNameEntry.grid(row=1, column=2, pady=(10,0))
+
+    itemRateLabel= Label(window, text="Rate")
+    itemRateLabel.grid(row=1, column=3, pady=(10,0))
+    
+    itemRateEntry= Entry(window, textvariable=addItemRateVar)
+    itemRateEntry.grid(row=1, column=4, pady=(10,0))
+    
+
+    itemtypeLabel= Label(window, text="Type")
+    itemtypeLabel.grid(row=2, column=1, pady=(10,0))
+    itemTypeEntry= Entry(window, textvariable=addItemTypeVar)
+    itemTypeEntry.grid(row=2, column=2, pady=(10,0))
+
+    storeTypeLabel= Label(window, text="Stored Type")
+    storeTypeLabel.grid(row=2, column=3, pady=(10,0))
+    storeEntry= OptionMenu(window, addstoredVar,*storeOptions)
+    storeEntry.grid(row=2, column=4, pady=(10,0))
+
+    AddItemButton = Button(window, text="Update Item", width=20, height=2, command=lambda:updateItem())
+    AddItemButton.grid(row=3, column=3,pady=(10,0))
+
+    updateTV.grid(row=4,column=0, columnspan=5)
+    scrollBar = Scrollbar(window, orient="vertical",command=billsTV.yview)
+    scrollBar.grid(row=4, column=4, sticky="NSE")
+
+    updateTV.configure(yscrollcommand=scrollBar.set)
+
+    updateTV.heading('#0',text="Item ID")
+    updateTV.column('#0', minwidth=0, width=150)
+    updateTV.heading('#1',text="Item Name")
+    updateTV.column('#1', minwidth=0, width=170)
+    updateTV.heading('#2',text="Rate")
+    updateTV.column('#2', minwidth=0, width=150)
+    updateTV.heading('#3',text="Type")
+    updateTV.column('#3', minwidth=0, width=150)
+    updateTV.heading('#4',text="Store Type")
+    updateTV.column('#4', minwidth=0, width=150)
+    getItemLists()
