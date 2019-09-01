@@ -379,3 +379,11 @@ def mainwindow():
 
     costEntry=Entry(window, textvariable=costVar)
     costEntry.grid(row=3, column=3, padx=(10,0), pady=(10,0))
+
+    buttonBill = Button(window, text="Add to List", width =15,command=lambda:generate_bill())
+    buttonBill.grid(row=3, column=4,padx=(5,0),pady=(10,0))
+
+    billLabel=Label(window, text="Bills", font="Arial 25")
+    billLabel.grid(row=4, column=2)
+
+    
