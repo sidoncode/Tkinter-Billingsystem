@@ -411,3 +411,9 @@ def itemAddWindow():
 
     itemNameLabel= Label(window, text="Name")
     itemNameLabel.grid(row=1, column=1, pady=(10,0))
+
+    itemNameEntry= Entry(window, textvariable=addItemNameVar)
+    itemNameEntry.grid(row=1, column=2, pady=(10,0))
+
+    itemNameEntry= Entry(window, textvariable=addItemNameVar)
+    itemNameEntry.grid(row=1, column=2, pady=(10,0))
