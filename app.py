@@ -423,3 +423,17 @@ def itemAddWindow():
 
     itemRateEntry= Entry(window, textvariable=addItemRateVar)
     itemRateEntry.grid(row=1, column=4, pady=(10,0))
+
+
+    itemtypeLabel= Label(window, text="Type")
+    itemtypeLabel.grid(row=2, column=1, pady=(10,0))
+    itemTypeEntry= Entry(window, textvariable=addItemTypeVar)
+    itemTypeEntry.grid(row=2, column=2, pady=(10,0))
+
+    storeTypeLabel= Label(window, text="Stored Type")
+    storeTypeLabel.grid(row=2, column=3, pady=(10,0))
+    storeEntry= OptionMenu(window, addstoredVar,*storeOptions)
+    storeEntry.grid(row=2, column=4, pady=(10,0))
+
+    AddItemButton = Button(window, text="Add Item", width=20, height=2, command=lambda:addItem())
+    AddItemButton.grid(row=3, column=3,pady=(10,0))
