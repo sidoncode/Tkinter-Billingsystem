@@ -403,3 +403,8 @@ def mainwindow():
     generateBill.grid(row=6,column=4)
     
     updateListView() #// call the function of the update list view
+def itemAddWindow():
+    backButton = Button(window, text="Back" , command=lambda:readAllData())
+    backButton.grid(row=0, column=1)
+    titleLabel = Label(window,text="P&E Billing System", width=40,font="Arial 30",fg="green")
+    titleLabel.grid(row=0,column=2,columnspan=4,pady=(10,0))
